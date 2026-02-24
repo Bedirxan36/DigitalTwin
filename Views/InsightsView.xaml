@@ -1,0 +1,199 @@
+<Page x:Class="DigitalTwin.Views.InsightsView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      mc:Ignorable="d"
+      Title="Insights"
+      Background="Transparent">
+
+    <Page.Resources>
+        <!-- Card Hover Animation -->
+        <Style x:Key="AnimatedCardStyle" TargetType="Border">
+            <Setter Property="Background" Value="{StaticResource SurfaceBrush}"/>
+            <Setter Property="CornerRadius" Value="16"/>
+            <Setter Property="Effect" Value="{StaticResource ShadowMD}"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Trigger.EnterActions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)"
+                                               To="1.01" Duration="0:0:0.2">
+                                    <DoubleAnimation.EasingFunction>
+                                        <CubicEase EasingMode="EaseOut"/>
+                                    </DoubleAnimation.EasingFunction>
+                                </DoubleAnimation>
+                                <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)"
+                                               To="1.01" Duration="0:0:0.2">
+                                    <DoubleAnimation.EasingFunction>
+                                        <CubicEase EasingMode="EaseOut"/>
+                                    </DoubleAnimation.EasingFunction>
+                                </DoubleAnimation>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </Trigger.EnterActions>
+                    <Trigger.ExitActions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)"
+                                               To="1" Duration="0:0:0.2"/>
+                                <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)"
+                                               To="1" Duration="0:0:0.2"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </Trigger.ExitActions>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Page.Resources>
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <StackPanel Margin="0,0,0,32">
+            
+            <!-- Header Section -->
+            <StackPanel Margin="0,0,0,32">
+                <TextBlock Text="İçgörüler" 
+                          FontSize="32" 
+                          FontWeight="Bold" 
+                          Foreground="{StaticResource TextPrimaryBrush}"
+                          Margin="0,0,0,8"/>
+                <TextBlock Text="Üretkenlik kalıplarınızı ve trendlerinizi analiz edin" 
+                          FontSize="14" 
+                          Foreground="{StaticResource TextSecondaryBrush}"/>
+            </StackPanel>
+
+            <!-- Time Range Selector -->
+            <Border Background="{StaticResource AccentGradientBrush}" 
+                   CornerRadius="20" 
+                   Padding="28" 
+                   Margin="0,0,0,24"
+                   Effect="{StaticResource ShadowLG}"
+                   RenderTransformOrigin="0.5,0.5">
+                <Border.RenderTransform>
+                    <ScaleTransform ScaleX="1" ScaleY="1"/>
+                </Border.RenderTransform>
+                <StackPanel>
+                    <TextBlock Text="📅 Zaman Aralığı" 
+                              FontSize="18" 
+                              FontWeight="Bold" 
+                              Foreground="White"
+                              Margin="0,0,0,16"/>
+                    
+                    <StackPanel Orientation="Horizontal">
+                        <Button Content="📅 Son 7 Gün" 
+                               Command="{Binding ChangeTimeRangeCommand}"
+                               CommandParameter="Last 7 Days"
+                               Style="{StaticResource PrimaryButtonStyle}"
+                               Background="White"
+                               Foreground="{StaticResource AccentBrush}"
+                               Margin="0,0,12,0"/>
+                        <Button Content="📆 Son 30 Gün" 
+                               Command="{Binding ChangeTimeRangeCommand}"
+                               CommandParameter="Last 30 Days"
+                               Style="{StaticResource SecondaryButtonStyle}"
+                               BorderBrush="White"
+                               Foreground="White"/>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+
+            <!-- Weekly Summary Chart -->
+            <Border Style="{StaticResource AnimatedCardStyle}"
+                   Padding="28" 
+                   Margin="0,0,0,24"
+                   MinHeight="320"
+                   RenderTransformOrigin="0.5,0.5">
+                <Border.RenderTransform>
+                    <ScaleTransform ScaleX="1" ScaleY="1"/>
+                </Border.RenderTransform>
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0,0,0,20">
+                        <Border Width="48" Height="48"
+                               Background="{StaticResource InfoBrush}"
+                               Opacity="0.15"
+                               CornerRadius="12"
+                               Margin="0,0,12,0">
+                            <TextBlock Text="📊" 
+                                      FontSize="24" 
+                                      HorizontalAlignment="Center"
+                                      VerticalAlignment="Center"/>
+                        </Border>
+                        <TextBlock Text="Aktivite Zaman Çizelgesi" 
+                                  FontSize="20" 
+                                  FontWeight="Bold" 
+                                  Foreground="{StaticResource TextPrimaryBrush}"
+                                  VerticalAlignment="Center"/>
+                    </StackPanel>
+                    
+                    <Border Background="{StaticResource PrimarySubtleBrush}"
+                           CornerRadius="16"
+                           Padding="40"
+                           MinHeight="240">
+                        <TextBlock Text="📈 Grafik görselleştirmesi burada gösterilecek&#x0a;&#x0a;Günlük aktivite kalıplarınızı, en yüksek üretkenlik saatlerinizi ve zaman içindeki kullanım trendlerinizi takip edin." 
+                                  VerticalAlignment="Center" 
+                                  HorizontalAlignment="Center"
+                                  Foreground="{StaticResource PrimaryBrush}"
+                                  FontSize="14"
+                                  FontWeight="Medium"
+                                  TextWrapping="Wrap"
+                                  TextAlignment="Center"
+                                  LineHeight="26"/>
+                    </Border>
+                </StackPanel>
+            </Border>
+
+            <!-- Top Applications -->
+            <Border Background="{StaticResource SurfaceBrush}" 
+                   CornerRadius="16" 
+                   Padding="24"
+                   Effect="{StaticResource ShadowMD}">
+                <StackPanel>
+                    <TextBlock Text="🏆 En Çok Kullanılan Uygulamalar" 
+                              FontSize="18" 
+                              FontWeight="SemiBold" 
+                              Foreground="{StaticResource TextPrimaryBrush}"
+                              Margin="0,0,0,16"/>
+                    
+                    <DataGrid ItemsSource="{Binding TopApps}" 
+                             AutoGenerateColumns="False"
+                             IsReadOnly="True"
+                             HeadersVisibility="Column"
+                             Background="{StaticResource BackgroundSecondaryBrush}"
+                             BorderThickness="0"
+                             GridLinesVisibility="None"
+                             RowBackground="{StaticResource BackgroundSecondaryBrush}"
+                             AlternatingRowBackground="{StaticResource BackgroundPrimaryBrush}"
+                             CanUserResizeRows="False"
+                             CanUserReorderColumns="False">
+                        <DataGrid.ColumnHeaderStyle>
+                            <Style TargetType="DataGridColumnHeader">
+                                <Setter Property="Background" Value="{StaticResource PrimarySubtleBrush}"/>
+                                <Setter Property="Foreground" Value="{StaticResource TextPrimaryBrush}"/>
+                                <Setter Property="FontWeight" Value="SemiBold"/>
+                                <Setter Property="Padding" Value="16,12"/>
+                                <Setter Property="BorderThickness" Value="0"/>
+                            </Style>
+                        </DataGrid.ColumnHeaderStyle>
+                        <DataGrid.CellStyle>
+                            <Style TargetType="DataGridCell">
+                                <Setter Property="BorderThickness" Value="0"/>
+                                <Setter Property="Padding" Value="16,12"/>
+                                <Setter Property="Foreground" Value="{StaticResource TextPrimaryBrush}"/>
+                            </Style>
+                        </DataGrid.CellStyle>
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Uygulama" 
+                                              Binding="{Binding Key}" 
+                                              Width="*"/>
+                            <DataGridTextColumn Header="Süre (dakika)" 
+                                              Binding="{Binding Value}" 
+                                              Width="150"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </StackPanel>
+            </Border>
+            
+        </StackPanel>
+    </ScrollViewer>
+</Page>

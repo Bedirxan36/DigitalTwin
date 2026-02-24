@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+              <xsd:attribute name="type" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  
+  <!-- Common -->
+  <data name="AppTitle" xml:space="preserve">
+    <value>Digital Twin</value>
+  </data>
+  
+  <!-- Navigation -->
+  <data name="Nav_Dashboard" xml:space="preserve">
+    <value>Dashboard</value>
+  </data>
+  <data name="Nav_Insights" xml:space="preserve">
+    <value>Insights</value>
+  </data>
+  <data name="Nav_FocusSession" xml:space="preserve">
+    <value>Focus Session</value>
+  </data>
+  <data name="Nav_RulesTags" xml:space="preserve">
+    <value>Rules &amp; Tags</value>
+  </data>
+  <data name="Nav_Settings" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  
+  <!-- Dashboard -->
+  <data name="Dashboard_Title" xml:space="preserve">
+    <value>Dashboard</value>
+  </data>
+  <data name="Dashboard_ActivityTracking" xml:space="preserve">
+    <value>Activity Tracking</value>
+  </data>
+  <data name="Dashboard_StartTracking" xml:space="preserve">
+    <value>Start Tracking</value>
+  </data>
+  <data name="Dashboard_StopTracking" xml:space="preserve">
+    <value>Stop Tracking</value>
+  </data>
+  <data name="Dashboard_ActiveTime" xml:space="preserve">
+    <value>Active Time</value>
+  </data>
+  <data name="Dashboard_ProductiveTime" xml:space="preserve">
+    <value>Productive Time</value>
+  </data>
+  <data name="Dashboard_ProductivityScore" xml:space="preserve">
+    <value>Productivity Score</value>
+  </data>
+  <data name="Dashboard_FocusSession" xml:space="preserve">
+    <value>Focus Session</value>
+  </data>
+  <data name="Dashboard_StartFocus" xml:space="preserve">
+    <value>Start Focus</value>
+  </data>
+  <data name="Dashboard_EndFocus" xml:space="preserve">
+    <value>End Focus</value>
+  </data>
+  <data name="Dashboard_Recommendations" xml:space="preserve">
+    <value>Recommendations</value>
+  </data>
+  <data name="Dashboard_Minutes" xml:space="preserve">
+    <value>min</value>
+  </data>
+  
+  <!-- Insights -->
+  <data name="Insights_Title" xml:space="preserve">
+    <value>Insights</value>
+  </data>
+  <data name="Insights_Last7Days" xml:space="preserve">
+    <value>Last 7 Days</value>
+  </data>
+  <data name="Insights_Last30Days" xml:space="preserve">
+    <value>Last 30 Days</value>
+  </data>
+  <data name="Insights_TopApplications" xml:space="preserve">
+    <value>Top Applications</value>
+  </data>
+  <data name="Insights_Application" xml:space="preserve">
+    <value>Application</value>
+  </data>
+  <data name="Insights_TimeMinutes" xml:space="preserve">
+    <value>Time (minutes)</value>
+  </data>
+  <data name="Insights_ChartPlaceholder" xml:space="preserve">
+    <value>Productivity Chart (Implement with LiveCharts or similar)</value>
+  </data>
+  
+  <!-- Settings -->
+  <data name="Settings_Title" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="Settings_TrackingSettings" xml:space="preserve">
+    <value>Tracking Settings</value>
+  </data>
+  <data name="Settings_IdleThreshold" xml:space="preserve">
+    <value>Idle Threshold (minutes):</value>
+  </data>
+  <data name="Settings_TrackBrowserDomains" xml:space="preserve">
+    <value>Track Browser Domains</value>
+  </data>
+  <data name="Settings_AutoStartTracking" xml:space="preserve">
+    <value>Auto-start Tracking on Launch</value>
+  </data>
+  <data name="Settings_DataManagement" xml:space="preserve">
+    <value>Data Management</value>
+  </data>
+  <data name="Settings_ExportData" xml:space="preserve">
+    <value>Export Data</value>
+  </data>
+  <data name="Settings_ImportData" xml:space="preserve">
+    <value>Import Data</value>
+  </data>
+  <data name="Settings_SaveSettings" xml:space="preserve">
+    <value>Save Settings</value>
+  </data>
+  <data name="Settings_ExportSuccess" xml:space="preserve">
+    <value>Export successful!</value>
+  </data>
+  <data name="Settings_ImportSuccess" xml:space="preserve">
+    <value>Import successful! Application restarting...</value>
+  </data>
+  <data name="Settings_ExportError" xml:space="preserve">
+    <value>Export error: {0}</value>
+  </data>
+  <data name="Settings_ImportError" xml:space="preserve">
+    <value>Import error: {0}</value>
+  </data>
+  <data name="Settings_SettingsSaved" xml:space="preserve">
+    <value>Settings saved.</value>
+  </data>
+  <data name="Settings_Language" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="Settings_LanguageSettings" xml:space="preserve">
+    <value>Language Settings</value>
+  </data>
+</root>

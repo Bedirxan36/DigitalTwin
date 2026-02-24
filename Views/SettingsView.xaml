@@ -1,0 +1,233 @@
+<Page x:Class="DigitalTwin.Views.SettingsView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      mc:Ignorable="d"
+      Title="Settings"
+      Background="Transparent">
+
+    <Page.Resources>
+        <!-- Card Hover Animation -->
+        <Style x:Key="AnimatedCardStyle" TargetType="Border">
+            <Setter Property="Background" Value="{StaticResource SurfaceBrush}"/>
+            <Setter Property="CornerRadius" Value="16"/>
+            <Setter Property="Effect" Value="{StaticResource ShadowMD}"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Trigger.EnterActions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)"
+                                               To="1.01" Duration="0:0:0.2">
+                                    <DoubleAnimation.EasingFunction>
+                                        <CubicEase EasingMode="EaseOut"/>
+                                    </DoubleAnimation.EasingFunction>
+                                </DoubleAnimation>
+                                <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)"
+                                               To="1.01" Duration="0:0:0.2">
+                                    <DoubleAnimation.EasingFunction>
+                                        <CubicEase EasingMode="EaseOut"/>
+                                    </DoubleAnimation.EasingFunction>
+                                </DoubleAnimation>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </Trigger.EnterActions>
+                    <Trigger.ExitActions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)"
+                                               To="1" Duration="0:0:0.2"/>
+                                <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)"
+                                               To="1" Duration="0:0:0.2"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </Trigger.ExitActions>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Page.Resources>
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <StackPanel Margin="0,0,0,32">
+            
+            <!-- Header Section -->
+            <StackPanel Margin="0,0,0,32">
+                <TextBlock Text="Ayarlar" 
+                          FontSize="32" 
+                          FontWeight="Bold" 
+                          Foreground="{StaticResource TextPrimaryBrush}"
+                          Margin="0,0,0,8"/>
+                <TextBlock Text="Digital Twin deneyiminizi özelleştirin" 
+                          FontSize="14" 
+                          Foreground="{StaticResource TextSecondaryBrush}"/>
+            </StackPanel>
+
+            <!-- Language Settings -->
+            <Border Style="{StaticResource AnimatedCardStyle}"
+                   Padding="28" 
+                   Margin="0,0,0,24"
+                   RenderTransformOrigin="0.5,0.5">
+                <Border.RenderTransform>
+                    <ScaleTransform ScaleX="1" ScaleY="1"/>
+                </Border.RenderTransform>
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0,0,0,20">
+                        <Border Width="48" Height="48"
+                               Background="{StaticResource SecondaryBrush}"
+                               Opacity="0.15"
+                               CornerRadius="12"
+                               Margin="0,0,12,0">
+                            <TextBlock Text="🌐" 
+                                      FontSize="24" 
+                                      HorizontalAlignment="Center"
+                                      VerticalAlignment="Center"/>
+                        </Border>
+                        <TextBlock Text="Dil Ayarları" 
+                                  FontSize="20" 
+                                  FontWeight="Bold" 
+                                  Foreground="{StaticResource TextPrimaryBrush}"
+                                  VerticalAlignment="Center"/>
+                    </StackPanel>
+                    
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="200"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        
+                        <TextBlock Grid.Column="0"
+                                  Text="Dil" 
+                                  VerticalAlignment="Center"
+                                  FontSize="14"
+                                  Foreground="{StaticResource TextSecondaryBrush}"/>
+                        
+                        <StackPanel Grid.Column="1" Orientation="Horizontal">
+                            <Button Content="🇹🇷 Türkçe"
+                                   Click="SetTurkish"
+                                   Style="{StaticResource PrimaryButtonStyle}"
+                                   Padding="20,10"/>
+                        </StackPanel>
+                    </Grid>
+                </StackPanel>
+            </Border>
+
+            <!-- Tracking Settings -->
+            <Border Style="{StaticResource AnimatedCardStyle}"
+                   Padding="28" 
+                   Margin="0,0,0,24"
+                   RenderTransformOrigin="0.5,0.5">
+                <Border.RenderTransform>
+                    <ScaleTransform ScaleX="1" ScaleY="1"/>
+                </Border.RenderTransform>
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0,0,0,20">
+                        <Border Width="48" Height="48"
+                               Background="{StaticResource PrimaryBrush}"
+                               Opacity="0.15"
+                               CornerRadius="12"
+                               Margin="0,0,12,0">
+                            <TextBlock Text="⚙️" 
+                                      FontSize="24" 
+                                      HorizontalAlignment="Center"
+                                      VerticalAlignment="Center"/>
+                        </Border>
+                        <TextBlock Text="Takip Ayarları" 
+                                  FontSize="20" 
+                                  FontWeight="Bold" 
+                                  Foreground="{StaticResource TextPrimaryBrush}"
+                                  VerticalAlignment="Center"/>
+                    </StackPanel>
+                    
+                    <Grid Margin="0,0,0,20">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="200"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        
+                        <TextBlock Grid.Column="0"
+                                  Text="Boşta Kalma Eşiği (dakika)" 
+                                  VerticalAlignment="Center"
+                                  FontSize="14"
+                                  Foreground="{StaticResource TextSecondaryBrush}"/>
+                        
+                        <TextBox Grid.Column="1"
+                                Text="{Binding IdleThresholdMinutes}" 
+                                Width="120"
+                                HorizontalAlignment="Left"
+                                Padding="12,10"
+                                FontSize="14"
+                                Background="{StaticResource BackgroundSecondaryBrush}"
+                                BorderBrush="{StaticResource BorderBrush}"
+                                BorderThickness="1"/>
+                    </Grid>
+
+                    <CheckBox Content="Tarayıcı Alan Adlarını Takip Et" 
+                             IsChecked="{Binding TrackBrowserDomains}"
+                             Margin="0,0,0,16"
+                             FontSize="14"
+                             Foreground="{StaticResource TextPrimaryBrush}"/>
+
+                    <CheckBox Content="Başlangıçta Otomatik Takip Başlat" 
+                             IsChecked="{Binding AutoStartTracking}"
+                             FontSize="14"
+                             Foreground="{StaticResource TextPrimaryBrush}"/>
+                </StackPanel>
+            </Border>
+
+            <!-- Data Management -->
+            <Border Style="{StaticResource AnimatedCardStyle}"
+                   Padding="28" 
+                   Margin="0,0,0,24"
+                   RenderTransformOrigin="0.5,0.5">
+                <Border.RenderTransform>
+                    <ScaleTransform ScaleX="1" ScaleY="1"/>
+                </Border.RenderTransform>
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0,0,0,20">
+                        <Border Width="48" Height="48"
+                               Background="{StaticResource InfoBrush}"
+                               Opacity="0.15"
+                               CornerRadius="12"
+                               Margin="0,0,12,0">
+                            <TextBlock Text="💾" 
+                                      FontSize="24" 
+                                      HorizontalAlignment="Center"
+                                      VerticalAlignment="Center"/>
+                        </Border>
+                        <TextBlock Text="Veri Yönetimi" 
+                                  FontSize="20" 
+                                  FontWeight="Bold" 
+                                  Foreground="{StaticResource TextPrimaryBrush}"
+                                  VerticalAlignment="Center"/>
+                    </StackPanel>
+                    
+                    <StackPanel Orientation="Horizontal" Margin="0,0,0,16">
+                        <Button Content="📤 Veriyi Dışa Aktar" 
+                               Command="{Binding ExportDataCommand}"
+                               Style="{StaticResource SecondaryButtonStyle}"
+                               Margin="0,0,12,0"/>
+                        
+                        <Button Content="📥 Veriyi İçe Aktar" 
+                               Command="{Binding ImportDataCommand}"
+                               Style="{StaticResource SecondaryButtonStyle}"/>
+                    </StackPanel>
+
+                    <TextBlock Text="{Binding StatusMessage}" 
+                              Foreground="{StaticResource SuccessBrush}"
+                              FontSize="14"
+                              FontWeight="Medium"
+                              Margin="0,8,0,0"/>
+                </StackPanel>
+            </Border>
+
+            <!-- Save Button -->
+            <Button Content="💾 Ayarları Kaydet" 
+                   Command="{Binding SaveSettingsCommand}"
+                   Style="{StaticResource PrimaryButtonStyle}"
+                   HorizontalAlignment="Left"
+                   Padding="32,14"/>
+            
+        </StackPanel>
+    </ScrollViewer>
+</Page>

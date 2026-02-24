@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+              <xsd:attribute name="type" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  
+  <!-- Common -->
+  <data name="AppTitle" xml:space="preserve">
+    <value>Dijital İkiz</value>
+  </data>
+  
+  <!-- Navigation -->
+  <data name="Nav_Dashboard" xml:space="preserve">
+    <value>Kontrol Paneli</value>
+  </data>
+  <data name="Nav_Insights" xml:space="preserve">
+    <value>İçgörüler</value>
+  </data>
+  <data name="Nav_FocusSession" xml:space="preserve">
+    <value>Odak Oturumu</value>
+  </data>
+  <data name="Nav_RulesTags" xml:space="preserve">
+    <value>Kurallar ve Etiketler</value>
+  </data>
+  <data name="Nav_Settings" xml:space="preserve">
+    <value>Ayarlar</value>
+  </data>
+  
+  <!-- Dashboard -->
+  <data name="Dashboard_Title" xml:space="preserve">
+    <value>Kontrol Paneli</value>
+  </data>
+  <data name="Dashboard_ActivityTracking" xml:space="preserve">
+    <value>Aktivite Takibi</value>
+  </data>
+  <data name="Dashboard_StartTracking" xml:space="preserve">
+    <value>Takibi Başlat</value>
+  </data>
+  <data name="Dashboard_StopTracking" xml:space="preserve">
+    <value>Takibi Durdur</value>
+  </data>
+  <data name="Dashboard_ActiveTime" xml:space="preserve">
+    <value>Aktif Süre</value>
+  </data>
+  <data name="Dashboard_ProductiveTime" xml:space="preserve">
+    <value>Üretken Süre</value>
+  </data>
+  <data name="Dashboard_ProductivityScore" xml:space="preserve">
+    <value>Verimlilik Skoru</value>
+  </data>
+  <data name="Dashboard_FocusSession" xml:space="preserve">
+    <value>Odak Oturumu</value>
+  </data>
+  <data name="Dashboard_StartFocus" xml:space="preserve">
+    <value>Odağı Başlat</value>
+  </data>
+  <data name="Dashboard_EndFocus" xml:space="preserve">
+    <value>Odağı Bitir</value>
+  </data>
+  <data name="Dashboard_Recommendations" xml:space="preserve">
+    <value>Öneriler</value>
+  </data>
+  <data name="Dashboard_Minutes" xml:space="preserve">
+    <value>dk</value>
+  </data>
+  
+  <!-- Insights -->
+  <data name="Insights_Title" xml:space="preserve">
+    <value>İçgörüler</value>
+  </data>
+  <data name="Insights_Last7Days" xml:space="preserve">
+    <value>Son 7 Gün</value>
+  </data>
+  <data name="Insights_Last30Days" xml:space="preserve">
+    <value>Son 30 Gün</value>
+  </data>
+  <data name="Insights_TopApplications" xml:space="preserve">
+    <value>En Çok Kullanılan Uygulamalar</value>
+  </data>
+  <data name="Insights_Application" xml:space="preserve">
+    <value>Uygulama</value>
+  </data>
+  <data name="Insights_TimeMinutes" xml:space="preserve">
+    <value>Süre (dakika)</value>
+  </data>
+  <data name="Insights_ChartPlaceholder" xml:space="preserve">
+    <value>Verimlilik Grafiği (LiveCharts veya benzeri ile uygulanacak)</value>
+  </data>
+  
+  <!-- Settings -->
+  <data name="Settings_Title" xml:space="preserve">
+    <value>Ayarlar</value>
+  </data>
+  <data name="Settings_TrackingSettings" xml:space="preserve">
+    <value>Takip Ayarları</value>
+  </data>
+  <data name="Settings_IdleThreshold" xml:space="preserve">
+    <value>Boşta Kalma Eşiği (dakika):</value>
+  </data>
+  <data name="Settings_TrackBrowserDomains" xml:space="preserve">
+    <value>Tarayıcı Alan Adlarını Takip Et</value>
+  </data>
+  <data name="Settings_AutoStartTracking" xml:space="preserve">
+    <value>Başlangıçta Otomatik Takip</value>
+  </data>
+  <data name="Settings_DataManagement" xml:space="preserve">
+    <value>Veri Yönetimi</value>
+  </data>
+  <data name="Settings_ExportData" xml:space="preserve">
+    <value>Veriyi Dışa Aktar</value>
+  </data>
+  <data name="Settings_ImportData" xml:space="preserve">
+    <value>Veriyi İçe Aktar</value>
+  </data>
+  <data name="Settings_SaveSettings" xml:space="preserve">
+    <value>Ayarları Kaydet</value>
+  </data>
+  <data name="Settings_ExportSuccess" xml:space="preserve">
+    <value>Dışa aktarma başarılı!</value>
+  </data>
+  <data name="Settings_ImportSuccess" xml:space="preserve">
+    <value>İçe aktarma başarılı! Uygulama yeniden başlatılıyor...</value>
+  </data>
+  <data name="Settings_ExportError" xml:space="preserve">
+    <value>Dışa aktarma hatası: {0}</value>
+  </data>
+  <data name="Settings_ImportError" xml:space="preserve">
+    <value>İçe aktarma hatası: {0}</value>
+  </data>
+  <data name="Settings_SettingsSaved" xml:space="preserve">
+    <value>Ayarlar kaydedildi.</value>
+  </data>
+  <data name="Settings_Language" xml:space="preserve">
+    <value>Dil</value>
+  </data>
+  <data name="Settings_LanguageSettings" xml:space="preserve">
+    <value>Dil Ayarları</value>
+  </data>
+</root>
